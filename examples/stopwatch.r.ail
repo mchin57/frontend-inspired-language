@@ -3,9 +3,9 @@ sig ms:Int 0
 sig run:Bool false
 derive lbl:Str run?"Stop":"Start"
 node disp div{s="bold large"} "{ms/1000}.{ms%1000/100}s"
-node go button{s="btn"} "{lbl}"
+node go button "{lbl}"
 node root div{s="col gap2 p4"} [disp (div{s="row gap2"} [go rst])]
-node rst button{s="btn"} "Reset"
+node rst button "Reset"
 on go.click r[run] w[run] run ? (stop(tick);run=false) : (start(tick);run=true)
 on rst.click r[] w[ms] ms=0
 act tick 100 r[ms] w[ms] ms=ms+100

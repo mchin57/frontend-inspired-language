@@ -2,8 +2,8 @@ ail1 R
 sig draft:Str ""
 sig todos:List<{done:Bool text:Str}> []
 derive left:Int len(filter(todos,!.done))
-node add button{s="btn"} "Add"
-node del button{s="btn small"} "x"
+node add button "Add"
+node del button{s="small"} "x"
 node inp input{placeholder="Add todo" value=draft}
 node list ul{s="col gap1"} each(todos,row)
 node root div{s="col gap2 p4"} [ttl (div{s="row gap2"} [inp add]) list "{left} left"]

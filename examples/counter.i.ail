@@ -1,5 +1,5 @@
 ail1 I
 sig n 0
-node btn button{s="btn"} "Count: {n}"
+node btn button "Count: {n}"
 node root div{s="p4"} btn
 on btn.click n=n+1

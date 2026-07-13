@@ -2,9 +2,9 @@ ail1 T
 s tab 0
 c panel(i:Int txt:Str) (div{s="card" show=tab==i} "{txt}")
 n root div{s="col gap2 p4"} [(div{s="row gap2"} [t0 t1 t2]) panel(0,"Home page") panel(1,"All about us") panel(2,"Get help here")]
-n t0 button{s="btn"} "Home"
-n t1 button{s="btn"} "About"
-n t2 button{s="btn"} "Help"
+n t0 button "Home"
+n t1 button "About"
+n t2 button "Help"
 o t0.click tab=0
 o t1.click tab=1
 o t2.click tab=2

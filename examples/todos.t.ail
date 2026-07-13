@@ -2,8 +2,8 @@ ail1 T
 s draft ""
 s todos []
 d left len(filter(todos,!.done))
-n add button{s="btn"} "Add"
-n del button{s="btn small"} "x"
+n add button "Add"
+n del button{s="small"} "x"
 n inp input{placeholder="Add todo" value=draft}
 n list ul{s="col gap1"} each(todos,row)
 n root div{s="col gap2 p4"} [ttl (div{s="row gap2"} [inp add]) list "{left} left"]

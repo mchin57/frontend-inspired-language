@@ -224,6 +224,7 @@
 
   function render(spec, scope, isNamed, nodeId) {
     const el = document.createElement(spec.tag);
+    if (isNamed) el.setAttribute('data-ail', nodeId);
     for (const a of spec.attrs) {
       if (a.name === 's') {
         for (const tok of a.val.v.split(' ').filter(Boolean)) el.classList.add('s_' + tok);

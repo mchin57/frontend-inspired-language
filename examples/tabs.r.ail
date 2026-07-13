@@ -2,9 +2,9 @@ ail1 R
 sig tab:Int 0
 comp panel(i:Int txt:Str) (div{s="card" show=tab==i} "{txt}")
 node root div{s="col gap2 p4"} [(div{s="row gap2"} [t0 t1 t2]) panel(i=0 txt="Home page") panel(i=1 txt="All about us") panel(i=2 txt="Get help here")]
-node t0 button{s="btn"} "Home"
-node t1 button{s="btn"} "About"
-node t2 button{s="btn"} "Help"
+node t0 button "Home"
+node t1 button "About"
+node t2 button "Help"
 on t0.click r[] w[tab] tab=0
 on t1.click r[] w[tab] tab=1
 on t2.click r[] w[tab] tab=2

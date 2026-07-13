@@ -12,6 +12,7 @@
     "gpt-tokenizer": "^2.8.0"
   },
   "devDependencies": {
+    "@types/jsdom": "^28.0.3",
     "@types/node": "^20.11.0",
     "jsdom": "^24.0.0",
     "tsx": "^4.7.0",

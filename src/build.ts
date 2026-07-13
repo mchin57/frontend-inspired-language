@@ -25,11 +25,12 @@ body{font-family:system-ui,sans-serif;margin:0;padding:0;color:#1a1a1a;backgroun
 .s_large{font-size:24px}
 .s_muted{color:#767676}
 .s_card{border:1px solid #ddd;border-radius:8px;padding:16px;background:#fff}
-.s_btn{border:1px solid #bbb;border-radius:6px;background:#fff;padding:6px 12px;cursor:pointer;font:inherit}
-.s_btn:hover{background:#f0f0f0}
-.s_input{border:1px solid #bbb;border-radius:6px;padding:6px 10px;font:inherit}
 .s_list{list-style:none;padding:0;margin:0}
-input,button,select{font:inherit}
+button,.s_btn{border:1px solid #bbb;border-radius:6px;background:#fff;padding:6px 12px;cursor:pointer;font:inherit}
+button:hover{background:#f0f0f0}
+input,.s_input{border:1px solid #bbb;border-radius:6px;padding:6px 10px;font:inherit}
+input[type=checkbox]{width:auto;padding:0}
+select{font:inherit}
 ul{list-style:none;padding:0;margin:0}
 `.trim();
 

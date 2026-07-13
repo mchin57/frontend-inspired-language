@@ -1,5 +1,5 @@
 ail1 T
 s n 0
-n btn button{s="btn"} "Count: {n}"
+n btn button "Count: {n}"
 n root div{s="p4"} btn
 o btn.click n=n+1
