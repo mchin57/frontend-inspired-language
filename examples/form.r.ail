@@ -1,14 +1,14 @@
-ail1 I
-sig age ""
-sig email ""
-sig sent false
-derive ageok int(age)>=18
-derive emailok has(email,"@")
-derive ok ageok&&emailok
+ail1 R
+sig age:Str ""
+sig email:Str ""
+sig sent:Bool false
+derive ageok:Bool int(age)>=18
+derive emailok:Bool has(email,"@")
+derive ok:Bool ageok&&emailok
 node agein input{placeholder="Age" value=age}
 node emailin input{placeholder="Email" value=email}
 node root div{s="col gap2 p4"} [emailin (div{s="muted small" show=!emailok} "Invalid email") agein (div{s="muted small" show=!ageok} "Must be 18+") send (div{show=sent} "Sent!")]
 node send button{disabled=!ok s="btn"} "Send"
-on agein.input age=val
-on emailin.input email=val
-on send.click ok ? sent=true
+on agein.input r[] w[age] age=val
+on emailin.input r[] w[email] email=val
+on send.click r[ok] w[sent] ok ? sent=true

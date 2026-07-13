@@ -1,0 +1,5 @@
+ail1 R
+sig n:Int 0
+node btn button{s="btn"} "Count: {n}"
+node root div{s="p4"} btn
+on btn.click r[n] w[n] n=n+1

@@ -1,0 +1,11 @@
+ail1 T
+s ms 0
+s run false
+d lbl run?"Stop":"Start"
+n disp div{s="bold large"} "{ms/1000}.{ms%1000/100}s"
+n go button{s="btn"} "{lbl}"
+n root div{s="col gap2 p4"} [disp (div{s="row gap2"} [go rst])]
+n rst button{s="btn"} "Reset"
+o go.click run ? (stop(tick);run=false) : (start(tick);run=true)
+o rst.click ms=0
+a tick 100 ms=ms+100

@@ -1,0 +1,16 @@
+ail1 T
+s draft ""
+s todos []
+d left len(filter(todos,!.done))
+n add button{s="btn"} "Add"
+n del button{s="btn small"} "x"
+n inp input{placeholder="Add todo" value=draft}
+n list ul{s="col gap1"} each(todos,row)
+n root div{s="col gap2 p4"} [ttl (div{s="row gap2"} [inp add]) list "{left} left"]
+n row li{s="row gap2"} [tgl "{it.text}" del]
+n tgl input{checked=it.done type="checkbox"}
+n ttl h1 "Todos"
+o add.click draft!="" ? (todos+={done:false text:draft};draft="")
+o del.click todos-=ix
+o inp.input draft=val
+o tgl.change todos[ix].done=!todos[ix].done

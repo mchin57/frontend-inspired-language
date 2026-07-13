@@ -51,9 +51,14 @@ comp param types are always annotated.
   only (string building uses templates). `==`/`!=` on any two equal types.
   Comparisons on Int/Float/Str.
 - Field access `e.f`, indexing `e[i]` (List<T> × Int → T).
-- Builtins: `len(list|str)->Int`, `filter(list pred)->list` where pred is `.f` or
-  `!.f` (f a Bool field of the element type), `has(str str)->Bool` (contains),
+- Builtins: `len(list|str)->Int`, `filter(list,pred)->list` where pred is `.f` or
+  `!.f` (f a Bool field of the element type), `has(str,str)->Bool` (contains),
   `int(str)->Int` (total; non-numeric → 0), `str(any-scalar)->Str`.
+- Argument-list delimiting: builtin call args, `each(list,tpl)` args, list literals
+  (`[1,2,3]`), and profile-T positional comp args are comma-separated (an
+  expression followed by a space-separated expression would re-parse ambiguously,
+  e.g. `filter(todos .done)` reads as field access). Rec literal/type fields, attrs,
+  and named comp args are space-separated: their `name:`/`name=` prefixes delimit.
 
 ## Nodes
 

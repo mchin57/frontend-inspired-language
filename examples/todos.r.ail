@@ -1,7 +1,7 @@
-ail1 I
-sig draft ""
+ail1 R
+sig draft:Str ""
 sig todos:List<{done:Bool text:Str}> []
-derive left len(filter(todos,!.done))
+derive left:Int len(filter(todos,!.done))
 node add button{s="btn"} "Add"
 node del button{s="btn small"} "x"
 node inp input{placeholder="Add todo" value=draft}
@@ -10,7 +10,7 @@ node root div{s="col gap2 p4"} [ttl (div{s="row gap2"} [inp add]) list "{left} l
 node row li{s="row gap2"} [tgl "{it.text}" del]
 node tgl input{checked=it.done type="checkbox"}
 node ttl h1 "Todos"
-on add.click draft!="" ? (todos+={done:false text:draft};draft="")
-on del.click todos-=ix
-on inp.input draft=val
-on tgl.change todos[ix].done=!todos[ix].done
+on add.click r[draft,todos] w[draft,todos] draft!="" ? (todos+={done:false text:draft};draft="")
+on del.click r[todos] w[todos] todos-=ix
+on inp.input r[] w[draft] draft=val
+on tgl.change r[todos] w[todos] todos[ix].done=!todos[ix].done

@@ -1,0 +1,14 @@
+ail1 T
+s age ""
+s email ""
+s sent false
+d ageok int(age)>=18
+d emailok has(email,"@")
+d ok ageok&&emailok
+n agein input{placeholder="Age" value=age}
+n emailin input{placeholder="Email" value=email}
+n root div{s="col gap2 p4"} [emailin (div{s="muted small" show=!emailok} "Invalid email") agein (div{s="muted small" show=!ageok} "Must be 18+") send (div{show=sent} "Sent!")]
+n send button{disabled=!ok s="btn"} "Send"
+o agein.input age=val
+o emailin.input email=val
+o send.click ok ? sent=true
