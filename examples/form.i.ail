@@ -1,0 +1,14 @@
+ail1 I
+sig age ""
+sig email ""
+sig sent false
+derive ageok int(age)>=18
+derive emailok has(email "@")
+derive ok ageok&&emailok
+node agein input{placeholder="Age" value=age}
+node emailin input{placeholder="Email" value=email}
+node root div{s="col gap2 p4"} [emailin (div{s="muted small" show=!emailok} "Invalid email") agein (div{s="muted small" show=!ageok} "Must be 18+") send (div{show=sent} "Sent!")]
+node send button{disabled=!ok s="btn"} "Send"
+on agein.input age=val
+on emailin.input email=val
+on send.click ok ? sent=true

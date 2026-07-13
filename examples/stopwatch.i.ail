@@ -1,0 +1,11 @@
+ail1 I
+sig ms 0
+sig run false
+derive lbl run?"Stop":"Start"
+node disp div{s="bold large"} "{ms/1000}.{ms%1000/100}s"
+node go button{s="btn"} "{lbl}"
+node root div{s="col gap2 p4"} [disp (div{s="row gap2"} [go rst])]
+node rst button{s="btn"} "Reset"
+on go.click run ? (stop(tick);run=false) : (start(tick);run=true)
+on rst.click ms=0
+act tick 100 ms=ms+100
