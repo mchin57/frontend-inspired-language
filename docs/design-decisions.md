@@ -143,3 +143,24 @@ Specs: T=1245, I=1235, R=1360 tokens. Stages 2–3 not yet run — see
    diffing (current wholesale re-render loses input focus inside lists).
 5. Should T be dropped? Its token edge is ~2.5% and its inference rules
    (empty-list types from usage) are its most fragile part.
+
+## Longer-horizon ideas (from the original design discussion, unscheduled)
+
+- **Package the toolchain for agents** (MCP server or Claude Code skill): spec +
+  checker-as-tool + edit-protocol workflow shipped as one installable unit. The
+  hypothesis is that TC's true form is an agent toolchain, not a standalone
+  language. Benchmark the raw spec-in-context first — it isolates language
+  design from tooling effects.
+- **Program-as-database**: the declaration store becomes the source of truth
+  (edit ops the only mutation path; text an export). Deferred for git/tooling
+  compatibility during development; reopens if the edit protocol proves
+  dominant in stage 3.
+- **Automate the benchmark**: per-task jsdom acceptance scripts (drive the
+  built HTML, assert DOM state) instead of manual verification. Turns the
+  benchmark into a re-runnable regression suite for spec changes — worth doing
+  before iterating heavily on the specs.
+- **`theme` declaration sketch** (from the styling discussion): global design
+  tokens, e.g. `theme accent "#7c3aed" radius 12`, reskinning the default
+  stylesheet — brand styling for ~10 tokens while keeping design decisions
+  single-sited and checkable. Preferred over growing per-element vocabulary or
+  a raw-CSS escape hatch.
