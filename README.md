@@ -1,9 +1,20 @@
-# AIL — a token-optimized language for AI-authored web UIs
+# TC ("Token Cheater") — a token-optimized language for AI-authored web UIs
 
 An experiment: a programming language for web/event-style UIs designed for AI authors,
 optimizing **total loop tokens per working feature** — the in-context spec (amortized),
 program writes, every re-read during editing, and error/fix iterations. Human
-readability is explicitly not a goal.
+readability is explicitly not a goal. (Toolchain artifacts use the historical
+name `ail`: the `ail` CLI, `ail1` file headers, `.ail` extension.)
+
+**Docs**: [writing TC code](docs/writing-tc.md) ·
+[design decisions](docs/design-decisions.md) ·
+[codebase guide](docs/codebase.md) ·
+[benchmark protocol & results](benchmark/README.md)
+
+**Status (2026-07-13)**: language, checker, runtime, and all tooling working;
+79 tests pass; benchmark stage 1 done — profile I uses **1.9× fewer tokens than
+idiomatic React** across the 5 example apps. Stages 2–3 (model generation
+validity, full-loop cost) designed but not yet run.
 
 ## Design principles
 
