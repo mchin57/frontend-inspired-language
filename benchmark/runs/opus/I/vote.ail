@@ -1,0 +1,13 @@
+ail1 I
+sig birds 0
+sig cats 0
+sig dogs 0
+derive total birds+cats+dogs
+node bird button "Birds {birds}"
+node cat button "Cats {cats}"
+node dog button "Dogs {dogs}"
+node root div{s="col gap2 p4"} [cat dog bird tot]
+node tot div "Total: {total}"
+on bird.click birds+=1
+on cat.click cats+=1
+on dog.click dogs+=1

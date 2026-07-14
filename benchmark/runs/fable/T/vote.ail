@@ -1,0 +1,12 @@
+ail1 T
+s birds 0
+s cats 0
+s dogs 0
+d total cats+dogs+birds
+n bbtn button "Birds {birds}"
+n cbtn button "Cats {cats}"
+n dbtn button "Dogs {dogs}"
+n root div{s="col gap2 p4"} [cbtn dbtn bbtn "Total: {total}"]
+o bbtn.click birds+=1
+o cbtn.click cats+=1
+o dbtn.click dogs+=1

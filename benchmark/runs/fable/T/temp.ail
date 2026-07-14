@@ -1,0 +1,7 @@
+ail1 T
+s cel ""
+d f int(cel)*9/5+32
+n inp input{placeholder="Celsius" value=cel}
+n out div "{f} Fahrenheit"
+n root div{s="col gap2 p4"} [inp out]
+o inp.input cel=val

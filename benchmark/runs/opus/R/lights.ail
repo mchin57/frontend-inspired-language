@@ -1,0 +1,12 @@
+ail1 R
+sig cur:Str "RED"
+sig running:Bool false
+node amber div{s=cur=="AMBER"?"large bold":"muted"} "AMBER"
+node auto button "Auto {running}"
+node green div{s=cur=="GREEN"?"large bold":"muted"} "GREEN"
+node next button "Next"
+node red div{s=cur=="RED"?"large bold":"muted"} "RED"
+node root div{s="col gap2 p4"} [red amber green next auto]
+on auto.click r[running] w[running] running=!running;running ? start(tick) : stop(tick)
+on next.click r[cur] w[cur] cur=cur=="RED"?"GREEN":cur=="GREEN"?"AMBER":"RED"
+act tick 1000 r[cur] w[cur] cur=cur=="RED"?"GREEN":cur=="GREEN"?"AMBER":"RED"

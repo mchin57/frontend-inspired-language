@@ -1,0 +1,13 @@
+ail1 R
+sig birds:Int 0
+sig cats:Int 0
+sig dogs:Int 0
+derive total:Int cats+dogs+birds
+node b_birds button "Birds {birds}"
+node b_cats button "Cats {cats}"
+node b_dogs button "Dogs {dogs}"
+node root div{s="col gap2 p4"} [b_cats b_dogs b_birds total]
+node total div "Total: {total}"
+on b_birds.click r[birds] w[birds] birds+=1
+on b_cats.click r[cats] w[cats] cats+=1
+on b_dogs.click r[dogs] w[dogs] dogs+=1

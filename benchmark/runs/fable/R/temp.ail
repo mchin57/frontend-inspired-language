@@ -1,0 +1,8 @@
+ail1 R
+sig cels:Str ""
+derive fahr:Int int(cels)*9/5+32
+node inp input{placeholder="Celsius" value=cels}
+node out div "Fahrenheit: {fahr}"
+node root div{s="col gap2 p4"} [ttl inp out]
+node ttl h1 "Temperature converter"
+on inp.input r[] w[cels] cels=val

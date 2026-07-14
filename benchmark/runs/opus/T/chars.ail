@@ -1,0 +1,8 @@
+ail1 T
+s text ""
+d n len(text)
+n cnt div "{n}/100"
+n inp input{placeholder="Type here" value=text}
+n root div{s="col gap2 p4"} [inp cnt warn]
+n warn div{s="bold"} "Too long"
+o inp.input text=val

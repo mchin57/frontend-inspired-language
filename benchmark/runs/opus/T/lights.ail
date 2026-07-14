@@ -1,0 +1,12 @@
+ail1 T
+s auto false
+s cur "RED"
+n amber div{s=cur=="AMBER"?"large bold":"muted"} "AMBER"
+n autobtn button "Auto"
+n green div{s=cur=="GREEN"?"large bold":"muted"} "GREEN"
+n next button "Next"
+n red div{s=cur=="RED"?"large bold":"muted"} "RED"
+n root div{s="col gap2 p4"} [red amber green next autobtn]
+o autobtn.click auto=!auto;auto?start(tick):stop(tick)
+o next.click cur=="RED"?cur="GREEN":(cur=="GREEN"?cur="AMBER":cur="RED")
+a tick 1000 cur=="RED"?cur="GREEN":(cur=="GREEN"?cur="AMBER":cur="RED")

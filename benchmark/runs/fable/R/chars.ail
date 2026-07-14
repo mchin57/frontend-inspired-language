@@ -1,0 +1,7 @@
+ail1 R
+sig text:Str ""
+derive n:Int len(text)
+node inp input{placeholder="Type here" value=text}
+node root div{s="col gap2 p4"} [inp "{n}/100" warn]
+node warn div{show=n>100} "Too long"
+on inp.input r[] w[text] text=val

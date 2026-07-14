@@ -1,0 +1,12 @@
+ail1 I
+sig phase 0
+sig running false
+node amber div{s=phase==2?"large bold":"large"} "AMBER"
+node auto button "Auto"
+node green div{s=phase==1?"large bold":"large"} "GREEN"
+node next button "Next"
+node red div{s=phase==0?"large bold":"large"} "RED"
+node root div{s="col gap2 p4"} [red amber green next auto]
+act tick 1000 phase=phase==0?1:phase==1?2:0
+on auto.click running=!running;running?start(tick):stop(tick)
+on next.click phase=phase==0?1:phase==1?2:0

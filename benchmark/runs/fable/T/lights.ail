@@ -1,0 +1,9 @@
+ail1 T
+s auto false
+s cur 0
+n autob button "Auto"
+n nxt button "Next"
+n root div{s="col gap2 p4"} [(div{s="col gap1"} [(div{s="bold large" show=cur==0} "RED") (div{show=cur!=0} "RED") (div{s="bold large" show=cur==2} "AMBER") (div{show=cur!=2} "AMBER") (div{s="bold large" show=cur==1} "GREEN") (div{show=cur!=1} "GREEN")]) (div{s="row gap2"} [nxt autob])]
+o autob.click auto ? (auto=false;stop(tick)) : (auto=true;start(tick))
+o nxt.click cur=(cur+1)%3
+a tick 1000 cur=(cur+1)%3

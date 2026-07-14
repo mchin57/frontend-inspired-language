@@ -1,0 +1,7 @@
+ail1 R
+sig cel:Str ""
+derive fah:Int int(cel)*9/5+32
+node inp input{placeholder="Celsius" value=cel}
+node out div "{fah} F"
+node root div{s="col gap2 p4"} [inp out]
+on inp.input r[] w[cel] cel=val

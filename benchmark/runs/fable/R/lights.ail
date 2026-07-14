@@ -1,0 +1,9 @@
+ail1 R
+sig auto_on:Bool false
+sig phase:Int 0
+node auto button "Auto"
+node next button "Next"
+node root div{s="col gap2 p4"} [(div{s="col gap1"} [(div{s="bold large" show=phase==0} "RED") (div{show=phase!=0} "RED") (div{s="bold large" show=phase==2} "AMBER") (div{show=phase!=2} "AMBER") (div{s="bold large" show=phase==1} "GREEN") (div{show=phase!=1} "GREEN")]) (div{s="row gap2"} [next auto])]
+on auto.click r[auto_on] w[auto_on] auto_on ? (auto_on=false;stop(tick)) : (auto_on=true;start(tick))
+on next.click r[phase] w[phase] phase=(phase+1)%3
+act tick 1000 r[phase] w[phase] phase=(phase+1)%3

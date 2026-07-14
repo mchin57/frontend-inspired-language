@@ -1,0 +1,12 @@
+ail1 T
+s birds 0
+s cats 0
+s dogs 0
+d total birds+cats+dogs
+n birdbtn button "Birds {birds}"
+n catbtn button "Cats {cats}"
+n dogbtn button "Dogs {dogs}"
+n root div{s="col gap2 p4"} [catbtn dogbtn birdbtn "Total: {total}"]
+o birdbtn.click birds+=1
+o catbtn.click cats+=1
+o dogbtn.click dogs+=1

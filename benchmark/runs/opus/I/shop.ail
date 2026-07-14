@@ -1,0 +1,16 @@
+ail1 I
+sig draft ""
+sig items:List<{name:Str qty:Int}> []
+sig total 0
+node add button "Add"
+node inc button "+"
+node inp input{placeholder="Item" value=draft}
+node list ul{s="col gap1"} each(items,row)
+node rem button "x"
+node root div{s="col gap2 p4"} [ttl (div{s="row gap2"} [inp add]) list "{total} total"]
+node row li{s="row gap2"} ["{it.name}" "{it.qty}" inc rem]
+node ttl h1 "Shopping"
+on add.click draft!="" ? (items+={name:draft qty:1};draft="";total+=1)
+on inc.click (items[ix].qty+=1;total+=1)
+on inp.input draft=val
+on rem.click (total-=items[ix].qty;items-=ix)

@@ -1,0 +1,6 @@
+ail1 I
+sig text ""
+node inp input{placeholder="Type text" value=text}
+node root div{s="col gap2 p4"} [inp "{len(text)}/100" warn]
+node warn div{show=len(text)>100} "Too long"
+on inp.input text=val

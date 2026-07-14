@@ -1,0 +1,7 @@
+ail1 R
+sig text:Str ""
+node cnt div "{len(text)}/100"
+node inp input{placeholder="Type here" value=text}
+node root div{s="col gap2 p4"} [inp cnt warn]
+node warn div{show=len(text)>100} "Too long"
+on inp.input r[] w[text] text=val

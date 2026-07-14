@@ -1,0 +1,6 @@
+ail1 I
+sig cels ""
+derive fahr int(cels)*9/5+32
+node inp input{placeholder="Celsius" value=cels}
+node root div{s="col gap2 p4"} [(h1 "Temperature converter") inp "{fahr} Fahrenheit"]
+on inp.input cels=val

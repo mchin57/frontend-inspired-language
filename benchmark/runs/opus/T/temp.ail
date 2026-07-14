@@ -1,0 +1,6 @@
+ail1 T
+s celsius ""
+d fahr int(celsius)*9/5+32
+n inp input{placeholder="Celsius" value=celsius}
+n root div{s="col gap2 p4"} [inp "{fahr} F"]
+o inp.input celsius=val

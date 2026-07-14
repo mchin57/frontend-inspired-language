@@ -1,0 +1,6 @@
+ail1 T
+s txt ""
+n inp input{placeholder="Type text" value=txt}
+n root div{s="col gap2 p4"} [inp "{len(txt)}/100" warn]
+n warn div{show=len(txt)>100} "Too long"
+o inp.input txt=val

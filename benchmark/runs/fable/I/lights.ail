@@ -1,0 +1,9 @@
+ail1 I
+sig auto false
+sig light 0
+node autob button "Auto"
+node nextb button "Next"
+node root div{s="col gap2 p4"} [(span{s="bold large" show=light==0} "RED") (span{show=light!=0} "RED") (span{s="bold large" show=light==2} "AMBER") (span{show=light!=2} "AMBER") (span{s="bold large" show=light==1} "GREEN") (span{show=light!=1} "GREEN") (div{s="row gap2"} [nextb autob])]
+on autob.click auto ? (auto=false;stop(tick)) : (auto=true;start(tick))
+on nextb.click light==2 ? light=0 : light=light+1
+act tick 1000 light==2 ? light=0 : light=light+1
